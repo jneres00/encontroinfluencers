@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1º Encontro de Influenciadores</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="shortcut icon" type="image/x-icon" href="/img/fame (1).png">
+</head>
+
+<body>
+  <header>
+    <img src="/img/logo.jpeg" alt="Logo do Evento">
+    <h1>1º Encontro de Influenciadores</h1>
+    <p>Um evento que conecta criatividade, impacto digital e novas vozes do Brasil</p>
+    <a href="https://www.sympla.com.br/evento/1-encontro-influence-uberlandia/2902934" target="_blank" class="botao-ingresso">Garanta seu Ingresso!</a>
+    <div class="localizacao">
+      <p>📍 Centro de Convenções da UNA - Uberlândia/MG</p>
+      <p><a href="https://maps.app.goo.gl/vwGZGBVDj6w9dofG7" target="_blank">Ver no Google Maps</a></p>
+    </div>
+  </header>
+
+  
+  <nav>
+    <a href="#ingressos">Ingressos</a>
+    <a href="#lojinha">Lojinha</a>
+    <a href="#participantes">Participantes</a>
+    <a href="#patrocinadores">Patrocinadores</a>
+  </nav>
+
+  <main>
+    <!-- Contagem Regressiva -->
+    <section id="countdown-section" class="highlight">
+      <h2>Contagem Regressiva</h2>
+      <div class="countdown" id="countdown"></div>
+    </section>
+
+    <!-- Ingressos -->
+    <section class="highlight" id="ingressos">
+      <h2>Adquira seu Ingresso</h2>
+      <p><a href="https://www.sympla.com.br/evento/1-encontro-influence-uberlandia/2902934" target="_blank" class="botao-secundario">Clique aqui para comprar no Sympla</a></p>
+    </section>
+
+    <!-- Lojinha -->
+    <section class="highlight" id="lojinha">
+      <h2>Lojinha</h2>
+      <p>Em breve com produtos exclusivos do evento!</p>
+    </section>
+
+    <!-- Participantes -->
+    <section class="highlight" id="participantes">
+      <h2 style="text-align:center;">Participantes</h2>
+      <div class="participants-grid">
+        <a class="participante" href="https://instagram.com/exemplo1" target="_blank">
+          <img src="/img/Ana.jpg" alt="Ana Lima">
+          <p>Ana Lima</p>
+        </a>
+        <a class="participante" href="https://instagram.com/exemplo2" target="_blank">
+          <img src="/img/Carlos.jpg" alt="Carlos Souza">
+          <p>Carlos Souza</p>
+        </a>
+        <a class="participante" href="https://instagram.com/exemplo3" target="_blank">
+          <img src="/img/Bianca.jpg" alt="Bianca Torres">
+          <p>Bianca Torres</p>
+        </a>
+        <a class="participante" href="https://instagram.com/exemplo4" target="_blank">
+          <img src="/img/Diego.jpg" alt="Diego Martins">
+          <p>Diego Martins</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Patrocinadores -->
+    <section class="highlight" id="patrocinadores">
+      <h2>Patrocinadores</h2>
+      <div class="sponsors">
+        <img src="https://via.placeholder.com/200x100" alt="Patrocinador 1">
+        <img src="https://via.placeholder.com/200x100" alt="Patrocinador 2">
+        <img src="https://via.placeholder.com/200x100" alt="Patrocinador 3">
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="socials">
+        <a href="#"><img src="/img/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="/img/tik-tok.png" alt="TikTok"></a>
+        <a href="#"><img src="/img/social.png" alt="YouTube"></a>
+      </div>
+      <p>© 2025 Encontro de Influenciadores | Casa Nexa</p>
+    </div>
+
+    <!-- Botão WhatsApp com Font Awesome -->
+    <a href="https://wa.me/553491521932" class="whatsapp-button" target="_blank">
+      <i class="fab fa-whatsapp"></i> <!-- Ícone do WhatsApp -->
+    </a>
+  </footer>
+
+  <!-- Script para Contagem Regressiva -->
+  <script>
+    const countdown = document.getElementById('countdown');
+    const eventDate = new Date('2025-07-19T00:00:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance > 0) {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdown.innerHTML = `
+          <div class="time-box"><span class="number">${days}</span><span class="label">dias</span></div>
+          <div class="time-box"><span class="number">${hours}</span><span class="label">horas</span></div>
+          <div class="time-box"><span class="number">${minutes}</span><span class="label">min</span></div>
+          <div class="time-box"><span class="number">${seconds}</span><span class="label">seg</span></div>
+        `;
+      } else {
+        countdown.innerHTML = `<div class="evento-iniciado">Evento em andamento!</div>`;
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown(); //
+  </script>
+</body>
+</html>
